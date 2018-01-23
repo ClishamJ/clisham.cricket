@@ -17,4 +17,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Stack Exchange Data Dump(https://archive.org/details/stackexchange) - for generously making their data available to the public.
+* [Stack Exchange Data Dump](https://archive.org/details/stackexchange) - for generously making their data available to the public.
