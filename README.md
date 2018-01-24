@@ -17,5 +17,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [Stack Exchange Data Dump](https://archive.org/details/stackexchange) - for generously making their data available to the public.
+* [Sample Database](https://github.com/datacharmer/test_db) - Thanks to Giuseppe Maxia for making this data available.
 * [jqueryui-bootstrap-adapter](https://github.com/arschmitz/jqueryui-bootstrap-adapter) - Adapter for joining jQuery UI and Bootstrap together, by Alexander Schmitz.
+* [Lionite PHP MySQL Articles](https://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17) - For making great articles on MySQL queries through PHP.
