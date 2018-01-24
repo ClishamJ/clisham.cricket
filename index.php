@@ -12,7 +12,7 @@
 	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Practice and study of MySQL queries, jQuery UI, and more.">
+    <meta name="description" content="Practice and study of PHP-handled raw MySQL queries, jQuery UI, and more.">
     <meta name="author" content="James Clisham">
 
     <title>clisham.cricket</title>
@@ -32,6 +32,11 @@
 
     .mainContent { margin-top: 60px; }
 
+    .tabsHeader { margin-top: 15px; }
+
+    .clishamJumbotron { background: linear-gradient(to bottom right, #DB7A29, #FFB97F); color: #FFF; }
+
+    a, a:hover, a:focus { outline: 0; }
 
     </style>
 
@@ -59,51 +64,69 @@
 </nav>
 
 	
-	<div class="jumbotron">
+	<div class="jumbotron clishamJumbotron">
 		<div class="container">
 			<br/>
 			<h1>clisham.cricket</h1>
-			<p>Practice and study of MySQL queries, jQuery UI, and more.</p>
+			<p>Practice and study of PHP-handled raw MySQL queries, jQuery UI, and more.</p>
 		</div>
     </div>
 	
     <div class="component-container container">
-		<h2>Default Tabs</h2>
+		<p>The following exercises use a sample database composed of 300,000 employee records and accompanying information.</p>
+		<p>Much thanks to Giuseppe Maxia and Patrick Crews for <a href="https://github.com/datacharmer/test_db">making this database available</a> as well as Fusheng Wang and Carlo Zaniolo (both at Siemens Corporate Research) for creating it in the first place.</p>
+		<p>Disclaimer: This data is fabricated and does not correspond to real people.</p>
+
+
+
+
+    </div>
+
+
+    <div class="component-container container">
+		<h2>Selection of Employees by ID</h2>
 		<div class="sample-container">
+
+			<?php
+
+			include("getData.php");
+			$demoEmployee1 = db_select("SELECT * FROM employees WHERE emp_no = '499452'");
+			$demoEmployee2 = db_select("SELECT * FROM employees WHERE emp_no = '499453'");
+			$demoEmployee3 = db_select("SELECT * FROM employees WHERE emp_no = '499454'");
+			$demoEmployee4 = db_select("SELECT * FROM employees WHERE emp_no = '499455'");
+			$demoEmployee5 = db_select("SELECT * FROM employees WHERE emp_no = '499456'");
+
+
+			//print_r($demoEmployee1);
+			//print_r($demoEmployee1[0][first_name]);
+
+			?>
+
+
 			<div id="tabs">
 				<ul>
-					<li><a href="#tabs-1">Nunc tincidunt</a></li>
-					<li><a href="#tabs-2">Proin dolor</a></li>
-					<li><a href="#tabs-3">Aenean lacinia</a></li>
+					<li><a href="#tabs-1">Employee #<?php print_r($demoEmployee1[0][emp_no]) ?></a></li>
+					<li><a href="#tabs-2">Employee #<?php print_r($demoEmployee2[0][emp_no]) ?></a></li>
+					<li><a href="#tabs-3">Employee #<?php print_r($demoEmployee3[0][emp_no]) ?></a></li>
+					<li><a href="#tabs-4">Employee #<?php print_r($demoEmployee4[0][emp_no]) ?></a></li>
+					<li><a href="#tabs-5">Employee #<?php print_r($demoEmployee5[0][emp_no]) ?></a></li>
 				</ul>
 				<div id="tabs-1">
-					<p>
-					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-					</p>
+					<p class="tabsHeader">Name: <?php print_r($demoEmployee1[0][first_name] . ' ' . $demoEmployee1[0][last_name]);?></p>
 				</div>
 				<div id="tabs-2">
-					<p>
-					Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-					purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-					velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-					suscipit faucibus urna.
-					</p>
+					<p class="tabsHeader">Name: <?php print_r($demoEmployee2[0][first_name] . ' ' . $demoEmployee2[0][last_name]);?></p>
 				</div>
 				<div id="tabs-3">
-					Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-					Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-					ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-					lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-					</p>
-					<ul>
-						<li>List item one</li>
-						<li>List item two</li>
-						<li>List item three</li>
-					</ul>
+					<p class="tabsHeader">Name: <?php print_r($demoEmployee3[0][first_name] . ' ' . $demoEmployee3[0][last_name]);?></p>
 				</div>
+				<div id="tabs-4">
+                                        <p class="tabsHeader">Name: <?php print_r($demoEmployee4[0][first_name] . ' ' . $demoEmployee4[0][last_name]);?></p>
+                                </div>
+				<div id="tabs-5">
+                                        <p class="tabsHeader">Name: <?php print_r($demoEmployee5[0][first_name] . ' ' . $demoEmployee5[0][last_name]);?></p>
+                                </div>
+
 			</div>
 			<script>
 			$(function(){
@@ -117,4 +140,5 @@
 
   </body>
 </html>
+
 
