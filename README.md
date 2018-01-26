@@ -20,3 +20,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Sample Database](https://github.com/datacharmer/test_db) - Thanks to Giuseppe Maxia for making this data available.
 * [jqueryui-bootstrap-adapter](https://github.com/arschmitz/jqueryui-bootstrap-adapter) - Adapter for joining jQuery UI and Bootstrap together, by Alexander Schmitz.
 * [Lionite PHP MySQL Articles](https://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17) - For making great articles on MySQL queries through PHP.
+* [MySQL Query Cheatsheet](https://gist.github.com/hofmannsven/9164408) - Great reference for MySQL queries
