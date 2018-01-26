@@ -1,21 +1,20 @@
 <?php
 
+//
+// Much thanks to Lionite for the great crash course (where most of these functions come from)
+// https://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17
+//
+
+// Database login info, outside of public_html
 require_once("../config.ini.php");
 
+// Connects to database with mysqli, returns the connection for further use
 function db_connect(){
 
 	static $connection;
 
 	if(!isset($connection)) {
-
-
-
-		//$config = parse_ini_file('../config.ini');
-		//print_r("dumping: ");
-		//var_dump($config);
-		//print_r("<br />");
 		$connection = mysqli_connect('localhost',DB_USER,DB_PASSWORD,DB_NAME);
-
 	}
 
 	if($connection === false){
@@ -25,7 +24,7 @@ function db_connect(){
 
 }
 
-
+// Performs a query
 function db_query($query){
 
 	$connection = db_connect();
@@ -40,7 +39,7 @@ function db_query($query){
 
 }
 
-
+// Returns current MySQL error
 function db_error() {
 
 	$connection = db_connect();
@@ -48,7 +47,7 @@ function db_error() {
 
 }
 
-
+// Ease of use function for selects, gets data post-query and formats into an array for processing
 function db_select($query){
 
 	$rows = array();
@@ -64,9 +63,9 @@ function db_select($query){
 
 	return $rows;
 
-
 }
 
+// Sanitizes and quotes data for use in queries
 function db_quote($value){
 
 	$connection = db_connect();
@@ -74,7 +73,7 @@ function db_quote($value){
 
 }
 
-
+// Leftover Test function for PHP/MySQL troubleshooting
 function testDB(){
 
 	print_r("Testing DB");
@@ -105,9 +104,6 @@ function testDB(){
 	print_r("Done Testing DB");
 
 }
-
-
-
 
 ?>
 
